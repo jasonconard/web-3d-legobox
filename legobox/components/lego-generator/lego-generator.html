@@ -1,0 +1,35 @@
+<!doctype>
+<html>
+	<head>
+		<title>Lego generator</title>
+		<style>
+			body { margin: 15px; }
+			canvas { width: 320px; height: 240px; }
+		</style>
+	</head>
+	<body>
+		<div>
+			Largeur légo : <input type="number" id="lego-length" min="1" value="1"><br/>
+			Longueur légo : <input type="number" id="lego-width" min="1" value="1"><br/>
+			Hauteur légo : <input type="number" id="lego-height" min="1" value="1"><br/>
+		</div>
+		<hr/>
+		<div id="3dview"></div>
+
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js"></script>
+
+	<script src="../../common/constants.js"></script>
+	<script src="../../common/materials.js"></script>
+	<script src="../../common/geometries.js"></script>
+	<script src="../../common/meshes.js"></script>
+	<script src="lego-generator.js"></script>
+
+	<script type="text/javascript">
+		var lengthInput = document.getElementById('lego-length');
+		var widthInput = document.getElementById('lego-width');
+		var heightInput = document.getElementById('lego-height');
+		new LegoGeneratorCtrl(lengthInput, widthInput, heightInput);
+	</script>
+
+</html>
